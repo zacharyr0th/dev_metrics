@@ -2,47 +2,50 @@
 
 ## Introduction
 
-`dev_metrics` is a specialized tool for analyzing development activities across multiple repositories, as defined in `aptosRepos.toml`. It provides valuable insights into both the quantity and quality of contributions, enhancing the understanding of software development dynamics.
+`dev_metrics` is a versatile analysis tool designed for evaluating development activities across various repositories. This directory contains aptos_repos.toml which has a list of repositories who are dependent on Aptos-Core, the source code for the Aptos blockchain.
 
 ## Methodology
 
 ### Commit Counting
 
-- **Branches:** Includes commits from all branches.
-- **Open Source Libraries:** Excludes commits related to the integration of common libraries from code activity metrics.
+- **Branches:** Accounts for commits from all branches.
+- **Open Source Libraries:** Omits commits related solely to the integration of common libraries from the activity metrics.
 
 ### Developer Classification
 
-- **Developers:** Focuses on original code authors, including active codebase contributors who merge pull requests.
-- **Full-Time Contributors:** Contributors with code commits on 10 or more days in a month.
-- **Part-Time Contributors:** Contributors with fewer than 10 days of code commits in a month.
-- **One-Time Contributors:** Contributors with a single code commit in a rolling 3-month period.
+- **Developers:** Targets original code authors, including those actively contributing to the codebase.
+- **Full-Time Contributors:** Designated as contributors with code commits on 10 or more days within a month.
+- **Part-Time Contributors:** Identified as contributors with fewer than 10 days of code commits in a month.
+- **One-Time Contributors:** Recognizes contributors with a single code commit in a three-month period.
 
 ## Getting Started
 
-1. Clone the repository.
-2. Install necessary dependencies.
-3. Place your `aptosRepos.toml` in the root directory.
-4. Execute the tool following the provided instructions.
+1. **Clone the repository**: Download the `dev_metrics` codebase to your local machine.
+2. **Install Dependencies**: Ensure all required dependencies are installed.
+3. **Configure Your TOML File**: `dev_metrics` can analyze any repository listed in a TOML configuration file. Format your file like this:
+
+   ```toml
+   [[repo]]
+   url = "https://github.com/example/blockchain-core"
+
+   [[repo]]
+   url = "https://github.com/anotherexample/project"
 
 ## Usage
-
-- Execute the tool by running `python3 dev_metrics.py` from the dev_metrics directory.
-- The results will be categorized as per the outlined methodologies and can be viewed in the generated csv report.
-- **Configuration:** Keep `aptosRepos.toml` updated with current repositories that are dependent on [Aptos-Core]([url](https://github.com/aptos-labs/aptos-core)).
-- **Data Interpretation:** Use project-specific knowledge for more accurate insights from the data.
+- Execute the tool using `python3 dev_metrics.py` from the directory.
+- View the following results in the generated CSV report:
+  - **Developers**
+  - **Full-Time Contributors**
+  - **Part-Time Contributors**
+  - **One-Time Contributors**
 
 ## Contribution
-
-Contributions to `dev_metrics` are encouraged. Please follow these steps:
-
+Contributions are welcome. Please adhere to these guidelines:
 - Fork the repository.
-- Create a feature branch.
+- Create a new feature branch.
 - Commit your changes.
-- Submit a pull request with a clear enhancement or fix description.
+- Submit a detailed pull request.
 
 ## License
-
-This project is licensed under the Apache License 2.0, a permissive open-source license. This license explicitly grants patent rights from contributors to users and protects against trademark abuse. It allows considerable freedom in the use, modification, and distribution of the software, even for proprietary purposes, and requires modifications to be stated. 
-
-For full terms and conditions, see the [LICENSE](LICENSE) file.
+`dev_metrics` is licensed under the Apache License 2.0. It permits broad use, modification, and distribution of the software, even for proprietary purposes, with an obligation to state modifications.
+For full terms, see the [LICENSE](LICENSE) file.
