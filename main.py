@@ -9,11 +9,14 @@ def main():
     with open('aptosRepos.toml', 'r') as file: # Load the TOML file
         data = toml.load(file)
 
-    # Extract repository URLs - limit to first 20 for testing
-    # repo_urls = [repo['url'] for repo in data['repo']][:20] 
-
     # Extract all repository URLs
     repo_urls = [repo['url'] for repo in data['repo']]
+
+    # Initialize cumulative counters
+    cumulative_commits = 0
+    cumulative_full_time = 0
+    cumulative_part_time = 0
+    cumulative_one_time = 0
 
     for repo_url in repo_urls: # Iterate over each repository URL
         try:
@@ -21,7 +24,13 @@ def main():
             filtered_commits = filter_commits(commits) # Filter commits
             total_commits, full_time, part_time, one_time = count_contributors(filtered_commits) # Count contributors
 
-            # Print the results
+            # Accumulate the results
+            cumulative_commits += len(filtered_commits)
+            cumulative_full_time += full_time
+            cumulative_part_time += part_time
+            cumulative_one_time += one_time
+
+            # Print the results for each repository
             logging.info(f"Repository: {repo_url}")
             logging.info(f"Total Commits: {len(filtered_commits)}")
             logging.info(f"Full-Time Contributors: {full_time}")
@@ -30,6 +39,13 @@ def main():
 
         except Exception as e:
             logging.error(f"Error processing repository {repo_url}: {e}")
+
+    # Print cumulative results
+    logging.info("Cumulative Results:")
+    logging.info(f"Total Commits: {cumulative_commits}")
+    logging.info(f"Full-Time Contributors: {cumulative_full_time}")
+    logging.info(f"Part-Time Contributors: {cumulative_part_time}")
+    logging.info(f"One-Time Contributors: {cumulative_one_time}")
 
 if __name__ == "__main__":
     main()
