@@ -45,7 +45,3 @@ Contributions are welcome. Please adhere to these guidelines:
 - Create a new feature branch.
 - Commit your changes.
 - Submit a detailed pull request.
-
-## License
-`dev_metrics` is licensed under the Apache License 2.0. It permits broad use, modification, and distribution of the software, even for proprietary purposes, with an obligation to state modifications.
-For full terms, see the [LICENSE](LICENSE) file.
