@@ -2,27 +2,19 @@
 
 ## Introduction
 
-`dev_metrics` is a versatile analysis tool designed for evaluating development activities across various repositories. This directory contains aptos_repos.toml which has a list of repositories who are dependent on Aptos-Core, the source code for the Aptos blockchain.
+`dev_metrics` is a comprehensive tool designed for analyzing development activities within various repositories, particularly those related to the Aptos blockchain. It includes scripts for data fetching, filtering commits, and counting contributors, making it a powerful resource for developers and project managers.
 
-## Methodology
+## Features
 
-### Commit Counting
-
-- **Branches:** Accounts for commits from all branches.
-- **Open Source Libraries:** Omits commits related solely to the integration of common libraries from the activity metrics.
-
-### Developer Classification
-
-- **Developers:** Targets original code authors, including those actively contributing to the codebase.
-- **Full-Time Contributors:** Designated as contributors with code commits on 10 or more days within a month.
-- **Part-Time Contributors:** Identified as contributors with fewer than 10 days of code commits in a month.
-- **One-Time Contributors:** Recognizes contributors with a single code commit in a three-month period.
+- **Commit Analysis**: Analyzes commits across all branches, filtering out those related solely to common open-source library integrations.
+- **Developer Categorization**: Classifies contributors into full-time, part-time, and one-time contributors based on their commit frequency.
+- **Repository Customization**: Supports analysis of multiple repositories as specified in the `aptosRepos.toml` configuration file.
 
 ## Getting Started
 
-1. **Clone the repository**: Download the `dev_metrics` codebase to your local machine.
-2. **Install Dependencies**: Ensure all required dependencies are installed.
-3. **Configure Your TOML File**: `dev_metrics` can analyze any repository listed in a TOML configuration file. Format your file like this:
+1. **Clone the Repository**: Download the `dev_metrics` codebase to your local environment.
+2. **Install Dependencies**: Ensure all required Python dependencies are installed for the project.
+3. **Configure `aptosRepos.toml`**: Add the repositories you wish to analyze in the TOML file format:
 
    ```toml
    [[repo]]
@@ -32,16 +24,17 @@
    url = "https://github.com/anotherexample/project"
 
 ## Usage
-- Execute the tool using `python3 dev_metrics.py` from the directory.
-- View the following results in the generated CSV report:
-  - **Developers**
-  - **Full-Time Contributors**
-  - **Part-Time Contributors**
-  - **One-Time Contributors**
+
+Run the main script using `python3 main.py` in the project directory. The script performs the following tasks:
+- Fetches data (`data_fetch.py`)
+- Filters commits (`filter_commits.py`)
+- Counts contributors (`count_contributors.py`)
+Results will be displayed or saved based on the script's configuration.
 
 ## Contribution
-Contributions are welcome. Please adhere to these guidelines:
+
+Your contributions can help improve `dev_metrics`. Please follow these steps to contribute:
 - Fork the repository.
-- Create a new feature branch.
-- Commit your changes.
-- Submit a detailed pull request.
+- Create a new branch for your feature.
+- Make your changes and commit them.
+- Open a pull request with a detailed description of your changes.
