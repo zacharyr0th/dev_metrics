@@ -1,5 +1,6 @@
 from datetime import datetime
 from collections import defaultdict
+import logging
 
 def count_contributors(commits, full_time_threshold=10):
     total_commits = len(commits)
@@ -13,11 +14,8 @@ def count_contributors(commits, full_time_threshold=10):
             if date_str:
                 date = datetime.strptime(date_str, '%Y-%m-%dT%H:%M:%SZ').date()
                 contribution_days[author].add(date)
-            else:
-                print(f"Warning: Missing date for commit by {author}")
-
         except Exception as e:
-            print(f"Error processing commit for contributor count (Author: {author}): {e}")
+            logging.error(f"Error processing commit for contributor count (Author: {author}): {e}")
 
     full_time_contributors = 0
     part_time_contributors = 0
