@@ -1,6 +1,6 @@
 import requests
 import time
-import os
+import os 
 
 github_pat = os.getenv('GITHUB_PAT') # Load GitHub PAT from environment variable
 headers = {'Authorization': f'token {github_pat}'}
