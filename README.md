@@ -29,12 +29,5 @@ Run the main script using `python3 main.py` in the project directory. The script
 - Fetches data (`data_fetch.py`)
 - Filters commits (`filter_commits.py`)
 - Counts contributors (`count_contributors.py`)
+
 Results will be displayed or saved based on the script's configuration.
-
-## Contribution
-
-Your contributions can help improve `dev_metrics`. Please follow these steps to contribute:
-- Fork the repository.
-- Create a new branch for your feature.
-- Make your changes and commit them.
-- Open a pull request with a detailed description of your changes.
