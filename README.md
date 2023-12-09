@@ -2,19 +2,19 @@
 
 ## Introduction
 
-`dev_metrics` is a comprehensive tool designed for analyzing development activities within various repositories, particularly those related to the Aptos blockchain. It includes scripts for data fetching, filtering commits, and counting contributors, making it a powerful resource for developers and project managers.
+`dev_metrics` is a tool designed for analyzing development activities within various repositories, particularly those related to the Aptos blockchain. It includes scripts for data fetching, filtering commits, and counting contributors.
 
 ## Features
 
 - **Commit Analysis**: Analyzes commits across all branches, filtering out those related solely to common open-source library integrations.
 - **Developer Categorization**: Classifies contributors into full-time, part-time, and one-time contributors based on their commit frequency.
-- **Repository Customization**: Supports analysis of multiple repositories as specified in the `aptosRepos.toml` configuration file.
+- **Repository Customization**: Supports analysis of multiple repositories as specified in the `aptos_repos.toml` configuration file.
 
 ## Getting Started
 
 1. **Clone the Repository**: Download the `dev_metrics` codebase to your local environment.
 2. **Install Dependencies**: Ensure all required Python dependencies are installed for the project.
-3. **Configure `aptosRepos.toml`**: Add the repositories you wish to analyze in the TOML file format:
+3. **Configure `aptos_repos.toml`**: Add the repositories you wish to analyze in the TOML file format:
 
    ```toml
    [[repo]]
