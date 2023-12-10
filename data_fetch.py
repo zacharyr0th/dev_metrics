@@ -25,7 +25,6 @@ def fetch_repo_data(repo_url):
 
     while True:
         try:
-            # Added timeout argument to the requests.get method
             response = requests.get(commits_url, headers=headers, timeout=10)
 
             # Handle rate limiting

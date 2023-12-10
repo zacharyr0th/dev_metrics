@@ -42,8 +42,7 @@ def count_contributors(commits, full_time_threshold=10):
             logging.error(
                 "Key error processing commit for contributor count: %s", ke
             )
-        # It is still important to catch other exceptions to avoid crashing the script,
-        # but they should be re-raised after logging
+
         except Exception as e:
             logging.error(
                 "Unexpected error processing commit for contributor count (Author: %s): %s",
