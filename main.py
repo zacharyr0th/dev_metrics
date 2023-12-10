@@ -16,7 +16,7 @@ def main():
     logging.basicConfig(filename='app.log', level=logging.INFO,
                         format='%(asctime)s - %(levelname)s - %(message)s')
     # Load configuration from TOML file
-    with open('config.toml', encoding='utf-8') as file:  # Specify encoding explicitly
+    with open('aptos_repos.toml', encoding='utf-8') as file:  # Specify encoding explicitly
         data = toml.load(file)
     # Extract repository URLs
     repo_urls = [repo['url'] for repo in data['repo']]
