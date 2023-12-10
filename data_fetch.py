@@ -1,11 +1,23 @@
-import requests
-import time
-import os 
+"""
+Module docstring: A module to fetch repository data from GitHub.
+"""
 
-github_pat = os.getenv('GITHUB_PAT') # Load GitHub PAT from environment variable
-headers = {'Authorization': f'token {github_pat}'}
+import time
+import os
+import requests
 
 def fetch_repo_data(repo_url):
+    """
+    Fetches commit data for a given GitHub repository.
+
+    Args:
+        repo_url (str): The URL of the GitHub repository.
+
+    Returns:
+        tuple: A tuple containing a list of all commits and an empty list.
+    """
+    github_pat = os.getenv('GITHUB_PAT')  # Load GitHub PAT from environment variable
+    headers = {'Authorization': f'token {github_pat}'}
     repo_name = '/'.join(repo_url.split('/')[-2:])
     commits_url = f'https://api.github.com/repos/{repo_name}/commits'
 
@@ -13,7 +25,8 @@ def fetch_repo_data(repo_url):
 
     while True:
         try:
-            response = requests.get(commits_url, headers=headers)
+            # Added timeout argument to the requests.get method
+            response = requests.get(commits_url, headers=headers, timeout=10)
 
             # Handle rate limiting
             if response.status_code == 403 and 'rate limit' in response.text.lower():
@@ -42,4 +55,3 @@ def fetch_repo_data(repo_url):
             break
 
     return all_commits, []
-
