@@ -26,15 +26,12 @@
 
     in the root directory of the project.
 
-3. **Set Up Your GitHub PAT**: Set up your Personal Access Token (PAT) for GitHub to fetch data. Follow [this guide](url) for detailed instructions on how to create and use a PAT.
+3. **Set Up Your GitHub PAT**: Set up your Personal Access Token (PAT) for GitHub to fetch data. Follow [this guide](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) for detailed instructions on how to create and use a PAT.
 
 4. **Configure `aptos_repos.toml`**: Add the repositories you wish to analyze to the `aptos_repos.toml` file, adhering to the TOML file format. The file structure should look like this:
 
     ```toml
     # Repositories
-    [[repo]]
-    url = "https://github.com/example_user/example_repo"
-
     [[repo]]
     url = "https://github.com/another_user/another_repo"
     ```
