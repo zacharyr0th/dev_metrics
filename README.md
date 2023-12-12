@@ -12,16 +12,32 @@
 
 ## Getting Started
 
-1. **Clone the Repository**: Download the `dev_metrics` codebase to your local environment.
-2. **Install Dependencies**: Ensure all required Python dependencies are installed for the project.
-3. **Configure `aptos_repos.toml`**: Add the repositories you wish to analyze in the TOML file format:
+1. **Clone the Repository**: Clone the `dev_metrics` repository to your local environment. You can do this by running the following command in your terminal:
 
-   ```toml
-   [[repo]]
-   url = "https://github.com/example/blockchain-core"
+    ```
+    git clone [Repository URL]
+    ```
 
-   [[repo]]
-   url = "https://github.com/anotherexample/project"
+2. **Install Dependencies**: Install all required Python dependencies for the project. This can typically be done by running:
+
+    ```
+    pip install -r requirements.txt
+    ```
+
+    in the root directory of the project.
+
+3. **Set Up Your GitHub PAT**: Set up your Personal Access Token (PAT) for GitHub to fetch data. Follow [this guide](url) for detailed instructions on how to create and use a PAT.
+
+4. **Configure `aptos_repos.toml`**: Add the repositories you wish to analyze to the `aptos_repos.toml` file, adhering to the TOML file format. The file structure should look like this:
+
+    ```toml
+    # Repositories
+    [[repo]]
+    url = "https://github.com/example_user/example_repo"
+
+    [[repo]]
+    url = "https://github.com/another_user/another_repo"
+    ```
 
 ## Usage
 
