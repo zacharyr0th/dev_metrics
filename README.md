@@ -15,7 +15,7 @@
 1. **Clone the Repository**: Clone the `dev_metrics` repository to your local environment. You can do this by running the following command in your terminal:
 
     ```
-    git clone [Repository URL]
+    git clone https://github.com/zacharyr0th/dev_metrics.git
     ```
 
 2. **Install Dependencies**: Install all required Python dependencies for the project. This can typically be done by running:
